@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>male or female detector</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+  <body>
+
+    <!-- <div class='customAlert'>
+      <p class='message'></p>
+      <input type='button' class='confirmButton' value='Ok'>
+    </div> -->
+
+    <div class="main-container">
+        <div class="left-container">
+          <div>
+          <h1>Mr. or Ms. ?</h1> <br>
+         <form id="form">
+           <div class="lable-input-text">
+            <label class="texts">Name</label>
+             <input type="text" name="name" class="input-text" id="name" >
+           </div><br><br>
+           <div>
+             <fieldset class="texts">
+                <input type="radio" name="gender" value="male" > Male <br><br>
+                <input type="radio" name="gender" value="female" > Female <br><br><br>
+             </fieldset>
+           </div>
+           <button onclick="get_form(event);" type="button" class="btn" id="btn_submit">Submit</button> <br><br>
+           <button onclick="save_data(event);" type="button" class="btn" id="btn_save">Save</button>
+         </form>
+         </div>
+        </div>
+        <div class="right-container">
+            <div class="top-right-container">
+              <div>
+                <h1>Prediction</h1>
+                <p style="display:none;" id="hidden_name"></p>
+                <p class="texts" id="predicted-gender"></p>
+                <p class="texts" id="probability"></p>
+              </div>
+            </div>
+            <div class="bottom-right-container border-dashed">
+              <div>
+                <h1 id="save-answer-title">Saved Answer</h1>
+                <form id="form2">
+                <p id="save_answer_gender"></p>
+                  <button onclick="clear_data(event);" type="button" class="btn" id="btn_clear">Clear</button>
+                </form>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="msgbox-area" class="msgbox-area texts"></div>
+
+  <script src="script.js" type="text/javascript"></script>
+  </body>
+</html>

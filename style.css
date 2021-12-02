@@ -1,0 +1,257 @@
+/*
+* add background image to the html . This background image covers the entire browser window
+* this background photo is located in the center
+*/
+body {
+  background: url("Grey-website-background.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/*
+* all element(text) in h1 tag  turn white
+*/
+h1{
+  color: white;
+}
+
+/*
+* removes the border and padding from fieldset element
+*/
+fieldset{
+  border: 0;
+  padding:0px;
+}
+
+/*
+* set margin = 0 for (h1 element with id = save-answer-title)
+*/
+h1#save-answer-title {
+  margin: 0;
+}
+
+/*
+* main container holds all objects in this page.
+* with justify-content : flex-start , contents of main container are packed toward the start line.
+*/
+.main-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+  max-height: 70%;
+  opacity: 0.7;
+  border-radius: 25px;
+  background-color: black;
+  padding: 35px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/*
+* left container holds left contents of main container(Mr. or Ms. ? part)
+*/
+.left-container {
+  flex: 0 1 50%;
+  display: flex;
+  max-height: 100%;
+  max-width: 40%;
+  padding: .5em;
+}
+
+/*
+* right container holds right contents of main container(Prediction and Saved Answer part)
+*/
+.right-container {
+  flex: 0 1 40%;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 100%;
+  max-width: 60%;
+  padding-left: 2.5em;
+}
+
+/*
+* top right container only holds Prediction part
+*/
+.top-right-container {
+  flex: 0 0 100%;
+  max-height: 30%;
+  max-width: 100%;
+  padding: .5em;
+}
+
+/*
+* bottom right container only holds Saved Answer part
+*/
+.bottom-right-container {
+  flex: 0 0 100%;
+  max-height: 40%;
+  max-width: 100%;
+  padding: .5em;
+}
+
+/*
+* Used to dotting and change the border color of the saved Answer.
+*/
+.border-dashed {
+  border-top: 1px dashed #f00;
+  border-bottom: 1px dashed #f00;
+  border-left: 1px dashed #f00;
+  border-right: 1px dashed #f00;
+  color: white;
+}
+
+/*
+* the color of elements with this tag turn white.
+*/
+.texts {
+  color : white;
+}
+
+/*
+* this is used to beautify the name input in Mr. or Ms. ? part.
+*/
+.input-text {
+  padding: .275rem .15rem;
+  line-height: 1.5;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+}
+
+/*
+* Used to create space between two containers.
+*/
+.lable-input-text{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+}
+
+/*
+* Used to beautify buttons.
+*/
+.btn {
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  vertical-align: middle;
+}
+
+/*
+* When you hover the mouse over it, it selects a button and styles it.
+*/
+.btn:hover {
+  background-color: #2c974b;
+}
+
+/*****************************/
+/*   Style for MESSAGE BOX   */
+/*    (Points and Extras)    */
+/*****************************/
+
+/*
+* main container for msgbox(Box for display messages and errors).
+*/
+.msgbox-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+}
+
+/*
+* Gives style  for message box
+* This box contains message and button
+*/
+.msgbox-box {
+    font-size: inherit;
+    color: #ffffff;
+    background-color: rgba(192,192,192,0.8);
+    padding: 18px 20px;
+    margin: 0 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px rgba(192,192,192,0.65);
+    transition: opacity 300ms ease-in;
+}
+
+/*
+* It is for a time when the contents of the box should be completely hide and not displayed on the screen.
+*/
+.msgbox-box-hide {
+  opacity: 0;
+}
+
+:last-child {
+      margin: 0;
+}
+
+.msgbox-content {
+    flex-shrink: 1;
+}
+
+/*
+* Determines the style of close button.
+*/
+.msgbox-close {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 0 0 20px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: relative;
+    transition: text-shadow 225ms ease-out;
+}
+
+/*
+* When you hover the mouse over it, it selects a button and styles it.
+*/
+.msgbox-close:hover {
+      text-shadow: 0 0 3px #efefef;
+}
+
+/*
+* Give the following style to msgbox-area when the browser's width is between 481px and 767px.
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+  .msgbox-area {
+    left: 80px;
+    right: 80px;
+  }
+}
+
+/*
+* Give the following style to msgbox-area when the browser's width is 768px or more.  
+*/
+@media (min-width: 768px) {
+  .msgbox-area {
+    width: 480px;
+    height: 0;
+    top: 15px;
+    left: auto;
+    right: 15px;
+  }
+}
